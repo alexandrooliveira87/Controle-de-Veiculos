@@ -1,0 +1,22 @@
+/* sobre.css */
+
+/* Página Sobre */
+.about {
+    margin: 50px;
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 400px;
+    height: auto;
+    margin-right: 30px;
+    justify-content: center;
+}
+
+.about-text {
+    max-width: 400px;
+    text-align: justify;
+}

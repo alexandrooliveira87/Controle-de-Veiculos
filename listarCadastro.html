@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Veículos - Controle de Veículos</title>
+    <link rel="stylesheet" href="css/listar.css">
+</head>
+<body>
+    <header>
+        <h1>Administração do Sistema</h1>
+       
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2><a href="admin.html">Administração</a> </h2>
+            <ul>
+                <li><a href="cadastro.html" id="cadastro-link">Cadastro</a></li>
+                <li><a href="listarCadastro.html" id="listarCadastro-link">Litar Cadastro</a></li>
+            </ul>
+            <h2><a href="index.html" id="sair-link">Sair</a></h2>
+        </aside>
+
+        <main>
+            <section>
+                <h2>Listar Veículos</h2>
+                <table id="tabela-veiculos">
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Grupo</th>
+                            <th>Marca</th>
+                            <th>Ano</th>
+                            <th>Placa</th>
+                            <th>Cor</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Veículos serão listados aqui -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Administração do Sistema de Controle de Veículos</p>
+    </footer>
+
+    <script src="js/listar.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* acesso.css */
+
+/* Página Acesso */
+.access {
+    max-width: 300px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.access form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.access form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.access form label {
+    width: 80px; /* Ajuste a largura conforme necessário */
+    text-align: left;
+}
+
+.access form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.access form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

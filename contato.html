@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Controle de Veículos</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="acesso.html">Acesso</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Ícone de sanduíche -->
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h1>Contato</h1>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Controle de Veículos. Todos os direitos reservados.</p>
+</footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+
+</body>
+</html>

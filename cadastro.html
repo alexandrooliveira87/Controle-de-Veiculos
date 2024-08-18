@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração do Sistema</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <header>
+        <h1>Administração do Sistema</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2><a href="admin.html">Administração</a> </h2>
+            <ul>
+                <li><a href="cadastro.html" id="cadastro-link">Cadastro</a></li>
+            </ul>
+            <h2><a href="index.html" id="sair-link">Sair</a></h2>
+        </aside>
+
+        <main>
+            <section id="cadastrar-veiculo">
+                <h2>Cadastrar Veículo</h2>
+                <form id="form-cadastro">
+                    <div>
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" required>
+                    </div>
+                    <div>
+                        <label for="grupo">Grupo:</label>
+                        <select id="grupo" name="grupo" required>
+                            <option>Grupo A</option>
+                            <option>Grupo B</option>
+                            <option>Grupo C</option>
+                            <option>Grupo D</option>
+                            <option>Grupo E</option>
+                            <option>Grupo F</option>
+                            <option>Grupo G</option>
+                            <option>Grupo H</option>
+                            <option>Grupo I</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="marca">Marca:</label>
+                        <input type="text" id="marca" name="marca" required>
+                    </div>
+                    <div>
+                        <label for="ano">Ano:</label>
+                        <input type="number" id="ano" name="ano" required>
+                    </div>
+                    <div>
+                        <label for="placa">Placa:</label>
+                        <input type="text" id="placa" name="placa" required>
+                    </div>
+                    <div>
+                        <label for="cor">Cor:</label>
+                        <input type="color" id="cor" name="cor" required>
+                    </div>
+                    <div>
+                        <label for="descricao">Descrição Complementar:</label>
+                        <textarea id="descricao" name="descricao"></textarea>
+                    </div>
+                    <div>
+                        <label for="foto">Foto:</label>
+                        <input type="file" id="foto" name="foto">
+                    </div>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Administração do Sistema de Controle de Veículos</p>
+    </footer>
+
+    <script src="js/admin.js"></script>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

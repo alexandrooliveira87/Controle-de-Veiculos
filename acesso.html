@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso - Controle de Veículos</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/acesso.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="acesso.html">Acesso</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Ícone de sanduíche -->
+        </div>
+    </header>
+
+    <main>
+        <section class="access">
+            <h1>Login</h1>
+            <form id="login-form">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">Acessar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Controle de Veículos. Todos os direitos reservados.</p>
+</footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+
+</body>
+</html>
