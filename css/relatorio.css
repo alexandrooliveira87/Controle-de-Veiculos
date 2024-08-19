@@ -15,7 +15,6 @@ body {
 }
 
 /* Cabeçalho */
-/* Cabeçalho */
 header {
     background-color: #333;
     color: #fff;
@@ -46,18 +45,10 @@ header img {
     display: none; /* Esconde o botão em telas maiores */
 }
 
-#menu-toggle {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    display: none; /* Esconde o botão em telas maiores */
-}
-
 /* Container principal */
 .container {
     display: flex;
+    margin-left: 200px; /* Espaço reservado para o menu lateral */
     transition: margin-left 0.3s ease; /* Transição suave para a margem do container */
 }
 
@@ -97,6 +88,13 @@ aside a {
 
 aside a:hover {
     text-decoration: underline;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4; /* Fundo claro para o main */
 }
 
 /* Section */
