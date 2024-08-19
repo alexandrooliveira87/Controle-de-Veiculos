@@ -1,6 +1,4 @@
-
-// Função para exibir a seção de cadastro
-function exibirCadastro() {
-    document.getElementById('cadastrar-veiculo').style.display = 'block';
-    // Adicione qualquer outra lógica necessária para mostrar o formulário de cadastro
-}
+// Alterna a visibilidade do menu ao clicar no botão
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('.container').classList.toggle('menu-active');
+});

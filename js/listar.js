@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         veiculos.forEach((veiculo, index) => {
             const tr = document.createElement("tr");
 
+            // Ajuste do caminho da imagem e tratamento para imagem padrão
+            const fotoSrc = veiculo.foto ? veiculo.foto : 'imagens/imagem-padrao.jpg';
+
             tr.innerHTML = `
                 <td>${veiculo.modelo}</td>
                 <td>${veiculo.grupo}</td>
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${veiculo.placa}</td>
                 <td>${veiculo.cor}</td>
                 <td>${veiculo.descricao}</td>
+                <td><img src="${fotoSrc}" alt="Foto" style="width: 100px; height: auto;"></td>
                 <td>
                     <button class="btn-editar" data-index="${index}">Editar</button>
                     <button class="btn-excluir" data-index="${index}">Excluir</button>
@@ -35,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carregarVeiculos();
     }
 
-    // Event listener para excluir veículo
+    // Event listener para excluir e editar veículos
     tabelaVeiculos.addEventListener("click", function (e) {
         if (e.target.classList.contains("btn-excluir")) {
             const index = e.target.getAttribute("data-index");
@@ -44,9 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (e.target.classList.contains("btn-editar")) {
             const index = e.target.getAttribute("data-index");
-            window.location.href = `editar.html?index=${index}`;
+            window.location.href = `cadastro.html?index=${index}`; // Redireciona para o cadastro com o índice
         }
     });
 
     carregarVeiculos();
+});
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('.container').classList.toggle('menu-active');
 });

@@ -1,5 +1,3 @@
-/* sobre.css */
-
 /* Página Sobre */
 .about {
     margin: 50px;
@@ -7,16 +5,34 @@
     padding: 30px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Permite que os elementos sejam dispostos em várias linhas, se necessário */
 }
 
 .about-image img {
-    width: 400px;
+    width: 100%; /* Faz a imagem ocupar 100% da largura do seu contêiner */
+    max-width: 400px; /* Limita a largura máxima da imagem */
     height: auto;
     margin-right: 30px;
-    justify-content: center;
 }
 
 .about-text {
-    max-width: 400px;
+    max-width: 100%;
     text-align: justify;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .about {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .about-image img {
+        margin-right: 0; /* Remove a margem à direita em telas menores */
+        margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
 }

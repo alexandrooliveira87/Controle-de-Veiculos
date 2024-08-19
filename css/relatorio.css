@@ -1,7 +1,7 @@
-/* listar.css */
+/* relatorio.css */
 
 /* Reseta estilos padrões e margens */
-body, h1, h2, p, ul, li, form, table {
+body, h1, h2, p, ul, li, form {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,6 +14,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Cabeçalho */
 /* Cabeçalho */
 header {
     background-color: #333;
@@ -34,6 +35,15 @@ header img {
     max-width: 300px;
     height: auto;
     transition: max-width 0.3s ease;
+}
+
+#menu-toggle {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Esconde o botão em telas maiores */
 }
 
 #menu-toggle {
@@ -89,54 +99,45 @@ aside a:hover {
     text-decoration: underline;
 }
 
-/* Main */
-main {
-    margin-left: 200px; /* Espaço reservado para o aside */
-    display: block;
-    flex: 1;
-    padding: 20px;
-    transition: margin-left 0.3s ease; /* Transição suave para a margem do main */
-}
-
+/* Section */
 section {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 5px;
+    display: block;
 }
 
-/* Tabela de veículos */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Cards de veículos */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Botões de ação */
-button {
-    padding: 5px 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #555;
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 0;
+    color: #555;
 }
 
 /* Rodapé */
@@ -168,8 +169,8 @@ footer {
         transform: translateX(-100%); /* Esconde o menu em telas menores */
     }
 
-    main {
-        margin-left: 0; /* Remove o espaço reservado para o menu */
+    .container {
+        margin-left: 0; /* Remove o espaço reservado para o menu em telas menores */
     }
 
     .container.menu-active {

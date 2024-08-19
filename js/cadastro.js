@@ -1,44 +1,60 @@
-// Função para salvar os dados do formulário no localStorage
-function salvarCadastro(event) {
-    event.preventDefault(); // Previne o envio do formulário
+document.addEventListener("DOMContentLoaded", function () {
+    const formCadastro = document.getElementById("form-cadastro");
+    const veiculoIndex = document.getElementById("veiculo-index");
 
-    // Captura os dados do formulário
-    const modelo = document.getElementById('modelo').value;
-    const grupo = document.getElementById('grupo').value;
-    const marca = document.getElementById('marca').value;
-    const ano = document.getElementById('ano').value;
-    const placa = document.getElementById('placa').value;
-    const cor = document.getElementById('cor').value;
-    const descricao = document.getElementById('descricao').value;
-    const foto = document.getElementById('foto').files[0]; // Captura o arquivo da foto
+    // Função para carregar os dados do veículo, se houver
+    function carregarDados() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const index = urlParams.get("index");
 
-    // Cria um objeto com os dados
-    const veiculo = {
-        modelo,
-        grupo,
-        marca,
-        ano,
-        placa,
-        cor,
-        descricao,
-        foto: foto ? foto.name : null // Armazena apenas o nome do arquivo
-    };
+        if (index !== null) {
+            veiculoIndex.value = index;
+            const veiculos = JSON.parse(localStorage.getItem("veiculos")) || [];
+            const veiculo = veiculos[index];
 
-    // Recupera os dados existentes no localStorage
-    const veiculos = JSON.parse(localStorage.getItem('veiculos')) || [];
+            if (veiculo) {
+                document.getElementById("modelo").value = veiculo.modelo;
+                document.getElementById("grupo").value = veiculo.grupo;
+                document.getElementById("marca").value = veiculo.marca;
+                document.getElementById("ano").value = veiculo.ano;
+                document.getElementById("placa").value = veiculo.placa;
+                document.getElementById("cor").value = veiculo.cor;
+                document.getElementById("descricao").value = veiculo.descricao;
+                document.getElementById("foto").value = veiculo.foto;
+            }
+        }
+    }
 
-    // Adiciona o novo veículo aos dados existentes
-    veiculos.push(veiculo);
+    // Função para salvar ou atualizar o veículo
+    function salvarVeiculo(e) {
+        e.preventDefault(); // Previne o comportamento padrão do formulário
 
-    // Salva os dados atualizados no localStorage
-    localStorage.setItem('veiculos', JSON.stringify(veiculos));
+        const index = veiculoIndex.value;
+        const veiculos = JSON.parse(localStorage.getItem("veiculos")) || [];
+        const novoVeiculo = {
+            modelo: document.getElementById("modelo").value,
+            grupo: document.getElementById("grupo").value,
+            marca: document.getElementById("marca").value,
+            ano: document.getElementById("ano").value,
+            placa: document.getElementById("placa").value,
+            cor: document.getElementById("cor").value,
+            descricao: document.getElementById("descricao").value,
+            foto: document.getElementById("foto").value
+        };
 
-    // Limpa o formulário
-    document.getElementById('form-cadastro').reset();
+        if (index === "") {
+            // Adiciona um novo veículo
+            veiculos.push(novoVeiculo);
+        } else {
+            // Atualiza o veículo existente
+            veiculos[index] = novoVeiculo;
+        }
 
-    // Exibe uma mensagem de sucesso (opcional)
-    alert('Veículo cadastrado com sucesso!');
-}
+        localStorage.setItem("veiculos", JSON.stringify(veiculos));
+        window.location.href = "listarCadastro.html"; // Redireciona para a lista após salvar
+    }
 
-// Adiciona um event listener ao formulário
-document.getElementById('form-cadastro').addEventListener('submit', salvarCadastro);
+    formCadastro.addEventListener("submit", salvarVeiculo);
+
+    carregarDados();
+});
